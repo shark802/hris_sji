@@ -25,6 +25,13 @@
                   	</div>
                 </div>
                 <div class="form-group">
+                  	<label for="email_address" class="col-sm-3 control-label">Email Address</label>
+
+                  	<div class="col-sm-9">
+                      <textarea class="form-control" name="email_address" id="email_address"></textarea>
+                  	</div>
+                </div>
+                <div class="form-group">
                   	<label for="address" class="col-sm-3 control-label">Address</label>
 
                   	<div class="col-sm-9">
@@ -117,6 +124,13 @@
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_lastname" name="lastname">
                     </div>
+                </div>
+                <div class="form-group">
+                  	<label for="edit_email_address" class="col-sm-3 control-label">Email Address</label>
+
+                  	<div class="col-sm-9">
+                      <textarea class="form-control" name="email_address" id="edit_email_address"></textarea>
+                  	</div>
                 </div>
                 <div class="form-group">
                     <label for="edit_address" class="col-sm-3 control-label">Address</label>

@@ -134,6 +134,7 @@ function getRow(id){
       $('#edit_password').val(response.password);
       $('#edit_firstname').val(response.firstname);
       $('#edit_lastname').val(response.lastname);
+      $('#edit_email_address').val(response.email_address);
       $('#edit_address').val(response.address);
       $('#edit_schedule').val(response.schedule_id);
       $('#edit_position').val(response.position_id);

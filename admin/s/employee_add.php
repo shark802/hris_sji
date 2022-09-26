@@ -6,7 +6,7 @@
 		$lastname = $_POST['lastname'];
         
         $employee_id = $lastname.'.'.$firstname;
-		
+		$email_address = $_POST['email_address'];
         $address = $_POST['address'];
 		$birthdate = $_POST['birthdate'];
 		$contact = $_POST['contact'];
@@ -22,7 +22,7 @@
 		if($count->num_rows > 0){
 			$_SESSION['error'] = 'Employee already exist';
 		} else {
-			$sql1 = "INSERT INTO employees (employee_id, password, firstname, lastname, address, birthdate, contact_info, gender, photo, created_on,account_info) VALUES ('$employee_id', '12345', '$firstname', '$lastname', '$address', '$birthdate', '$contact', '$gender', '$filename', NOW(), 'Active')";
+			$sql1 = "INSERT INTO employees (employee_id, password, firstname, lastname, email_address, address, birthdate, contact_info, gender, photo, created_on,account_info) VALUES ('$employee_id', '12345', '$firstname', '$lastname', '$email_address', '$address', '$birthdate', '$contact', '$gender', '$filename', NOW(), 'Active')";
 			if($conn->query($sql1)){
 				$last_id = $conn->insert_id;
 
