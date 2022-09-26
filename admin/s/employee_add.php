@@ -5,8 +5,8 @@
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
         
-        $employee_id = $lastname.'.'.$firstname;
 		$email_address = $_POST['email_address'];
+       
         $address = $_POST['address'];
 		$birthdate = $_POST['birthdate'];
 		$contact = $_POST['contact'];
@@ -15,6 +15,10 @@
 		if(!empty($filename)){
 			move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
 		}
+        
+        $employee_id = $email_address;
+        $password = $birthdate;
+        $hash_password = md5($password); //Format YYYY-MM-DD
 
 		$last_id = 0;
 		$check_duplicate_sql = "SELECT firstname, lastname FROM employees WHERE firstname = '$firstname' AND lastname = '$lastname'";
@@ -22,7 +26,7 @@
 		if($count->num_rows > 0){
 			$_SESSION['error'] = 'Employee already exist';
 		} else {
-			$sql1 = "INSERT INTO employees (employee_id, password, firstname, lastname, email_address, address, birthdate, contact_info, gender, photo, created_on,account_info) VALUES ('$employee_id', '12345', '$firstname', '$lastname', '$email_address', '$address', '$birthdate', '$contact', '$gender', '$filename', NOW(), 'Active')";
+			$sql1 = "INSERT INTO employees (employee_id, password, firstname, lastname, email_address, address, birthdate, contact_info, gender, photo, created_on,account_info) VALUES ('$employee_id', '$hash_password', '$firstname', '$lastname', '$email_address', '$address', '$birthdate', '$contact', '$gender', '$filename', NOW(), 'Active')";
 			if($conn->query($sql1)){
 				$last_id = $conn->insert_id;
 
