@@ -18,6 +18,6 @@
 		$_SESSION['error'] = 'Select item to delete first';
 	}
 
-	header('location:http://localhost/payroll/web/admin/leave_credit.php?id='.$employee_id);
+	header('location:http://localhost/hris_sji/admin/s/leave_credit.php?id='.$employee_id);
 	
 ?>

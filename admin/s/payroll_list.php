@@ -113,7 +113,7 @@ $(function(){
   $(document).on('click', '.view', function(e){
     e.preventDefault();
     var id = $(this).data('id');
-    window.location.href = "http://localhost/payroll/web/admin/payroll.php?id=" + id;
+    window.location.href = "http://localhost/hris_sji/admin/s/payroll.php?id=" + id;
   });
 
   $(document).on('click', '.edit', function(e){

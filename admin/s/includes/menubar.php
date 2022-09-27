@@ -78,8 +78,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="mandatory.php"><i class="fa fa-thumb-tack"></i> Mandatory Contributions</a></li>
+           <!-- <li><a href="mandatory.php"><i class="fa fa-thumb-tack"></i> Mandatory Contributions</a></li>
             <li><a href="absences_late.php"><i class="fa fa-hourglass-end"></i> Absences / Lates / Undertime</a></li>
+              --> 
             <li><a href="dependent_list.php"><i class="fa fa-mortar-board"></i> Employees Dependent</a></li>
             <li class="treeview">
               <a href="#">

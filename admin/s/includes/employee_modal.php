@@ -28,7 +28,7 @@
                   	<label for="email_address" class="col-sm-3 control-label">Email Address</label>
 
                   	<div class="col-sm-9">
-                      <textarea class="form-control" name="email_address" id="email_address"></textarea>
+                      <input type="text" class="form-control" name="email_address" id="email_address" required>
                   	</div>
                 </div>
                 <div class="form-group">
@@ -43,7 +43,7 @@
 
                   	<div class="col-sm-9"> 
                       <div class="date">
-                        <input type="text" class="form-control" id="datepicker_add" name="birthdate">
+                        <input type="text" class="form-control" id="datepicker_add" name="birthdate" required>
                       </div>
                   	</div>
                 </div>
