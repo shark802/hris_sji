@@ -151,7 +151,7 @@ function getRow(id){
 }
 
 function LeaveCredit(id){
-  window.location.href = "http://localhost/payroll/web/admin/leave_credit.php?id=" + id;
+  window.location.href = "http://localhost/hris_sji/admin/s/leave_credit.php?id=" + id;
 }
 </script>
 </body>
