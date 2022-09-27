@@ -25,6 +25,22 @@
                       <textarea class="form-control" name="abbreviation" id="abbreviation"></textarea>
                   	</div>
                 </div>
+
+                <div class="form-group">
+                    <label for="level" class="col-sm-3 control-label">Level</label>
+
+                    <div class="col-sm-9"> 
+                      <select class="form-control" name="level" id="level" required>
+                        <option value="" selected>- Select -</option>
+                        <option value="1">Level 1</option>
+                        <option value="2">Level 2</option>
+                        <option value="3">Level 3</option>
+                        <option value="4">Level 4</option>
+                        <option value="5">Pre School</option>
+                        <option value="0">Admin/Staff</option>
+                      </select>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
