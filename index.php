@@ -1,1 +1,1 @@
-<?php include header("Location:m/user/"); ?>
+<?php include header("Location:m/"); ?>
