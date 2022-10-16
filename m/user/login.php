@@ -6,9 +6,9 @@
 		$username = $_POST['employee_id'];
 		$password = $_POST['password'];
 
-		$password = md5($password);
+		$hash_password = md5($password);
 
-		$sql = "SELECT * FROM employees WHERE employee_id = '$username' AND password = '$password'";
+		$sql = "SELECT * FROM employees WHERE employee_id = '$username' AND password = '$hash_password'";
 		$query = $conn->query($sql);
 
 		if($query->num_rows < 1){

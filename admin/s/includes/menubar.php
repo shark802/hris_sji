@@ -78,8 +78,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="mandatory.php"><i class="fa fa-thumb-tack"></i> Mandatory Contributions</a></li>
+           <!-- <li><a href="mandatory.php"><i class="fa fa-thumb-tack"></i> Mandatory Contributions</a></li>
             <li><a href="absences_late.php"><i class="fa fa-hourglass-end"></i> Absences / Lates / Undertime</a></li>
+              --> 
             <li><a href="dependent_list.php"><i class="fa fa-mortar-board"></i> Employees Dependent</a></li>
             <li class="treeview">
               <a href="#">
@@ -159,7 +160,7 @@
     <!--    <li><a href="setup_payroll.php"><i class="fa fa-cogs"></i>Payroll Setting</a></li> -->
             <li><a href="position.php"><i class="fa fa-id-badge"></i>Positions</a></li>
             <li><a href="schedule.php"><i class="fa fa-clipboard"></i> Schedules</a></li>
-            <li><a href="tax.php"><i class="fa fa-tags"></i> Tax Table</a></li> 
+            
           </ul>
         </li>
           <!--

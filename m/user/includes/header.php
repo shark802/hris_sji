@@ -4,8 +4,8 @@
   	<meta charset="utf-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link href="../images/download.png" rel="icon" type="image">
-    <title>Mobile Payslip</title>
+    <link href="images/icon.png" rel="icon" type="image">
+    <title>HRIS SJI - Employee</title>
    
   	<!-- Tell the browser to be responsive to screen width -->
   	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

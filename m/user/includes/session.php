@@ -9,7 +9,8 @@
 
         $sql = "SELECT *, employment_records.position_id, 
                         employees.employee_id AS username, 
-                        employees.id AS eid 
+                        employees.id AS eid,
+                        departments.level AS acadLevel 
                 FROM employees 
                 LEFT JOIN employment_records ON employees.id = employment_records.employee_id 
                 LEFT JOIN mandatory_contribution_record ON employees.id = mandatory_contribution_record.employee_id 
@@ -19,6 +20,7 @@
                 WHERE employees.id = '".$_SESSION['employee']."'";
         $query = $conn->query($sql);
         $user = $query->fetch_assoc();
+
 
         function getPublicIP(){
         

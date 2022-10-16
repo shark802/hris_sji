@@ -67,6 +67,10 @@
                       $level = $row['level'];
                       if($level == 0){
                         $level = 'Admin/Staff';
+                      } else if($level == 6){
+                        $level = 'Student Services';
+                      } else if($level == 7){
+                        $level = 'Support Services';
                       } else if($level == 5){
                         $level = 'Preschool';
                       }
@@ -75,7 +79,7 @@
                           <td class='hidden'></td>
                           <td>".$row['departments']."</td>
                           <td>".$row['abbreviation']."</td>
-                          <td> Level : ".$level."</td>
+                          <td>".$level."</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>

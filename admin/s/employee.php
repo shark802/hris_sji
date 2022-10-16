@@ -66,15 +66,14 @@
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT * FROM employees ORDER BY account_info ";
+                    $sql = "SELECT * FROM employees ORDER BY lastname, account_info ";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       echo "
                         <tr>
                           <td class='hidden'></td>
-                          <td>".$row['employee_id']."</td>
-                       
                           <td>".$row['lastname'].',&nbsp'.$row['firstname']."</td>
+                          <td>".$row['employee_id']."</td> 
                           <td>".$row['address']."</td>
                           <td>".$row['birthdate']."</td>
                           <td>".$row['contact_info']."</td>
@@ -133,6 +132,7 @@ function getRow(id){
       $('#edit_employee_id').val(response.employee_id);
       $('#edit_password').val(response.password);
       $('#edit_firstname').val(response.firstname);
+      $('#edit_middlename').val(response.middlename);
       $('#edit_lastname').val(response.lastname);
       $('#edit_email_address').val(response.email_address);
       $('#edit_address').val(response.address);

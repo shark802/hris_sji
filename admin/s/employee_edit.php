@@ -6,6 +6,7 @@
 		$employee_id = $_POST['employee_id'];
 		$password = $_POST['password'];
 		$firstname = $_POST['firstname'];
+		$middlename = $_POST['middlename'];
 		$lastname = $_POST['lastname'];
 		$email_address = $_POST['email_address'];
 		$address = $_POST['address'];
@@ -14,7 +15,7 @@
 		$gender = $_POST['gender'];
 		$status = $_POST['account_info'];
         
-		$sql = "UPDATE employees SET firstname = '$firstname', lastname = '$lastname', email_address = '$email_address', address = '$address', birthdate = '$birthdate', contact_info = '$contact', gender = '$gender', account_info = '$status' WHERE id = '$empid'";
+		$sql = "UPDATE employees SET firstname = '$firstname', middlename = '$middlename', lastname = '$lastname', email_address = '$email_address', address = '$address', birthdate = '$birthdate', contact_info = '$contact', gender = '$gender', account_info = '$status' WHERE id = '$empid'";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Employee updated successfully';
 		}

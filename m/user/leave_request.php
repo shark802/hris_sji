@@ -81,12 +81,52 @@
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT al.id, al.date_from, al.date_to, al.leave_type, al.num_leave, al.reason,
-                            al.hr_approval, al.supervisor_approval, al.principal_approval, al.status, e.firstname, e.lastname, lc.unused_leave 
-                            FROM applied_leave AS al 
-                            LEFT JOIN employees AS e ON e.id = al.employee_id
-                            LEFT JOIN leave_credit AS lc ON e.id = lc.employee_id AND al.leave_type = lc.leave_type
-                            ORDER BY status DESC";
+                    $description = $user['description'];
+                    if($description == 'Principal' || $description == 'HR Manager'){
+                        $sql = "SELECT al.id, al.date_from, al.date_to, al.leave_type, al.num_leave, al.reason,
+                                al.hr_approval, al.supervisor_approval, al.principal_approval, al.status, e.firstname, e.lastname, lc.unused_leave 
+                                FROM applied_leave AS al 
+                                LEFT JOIN employees AS e ON e.id = al.employee_id
+                                LEFT JOIN leave_credit AS lc ON e.id = lc.employee_id AND al.leave_type = lc.leave_type
+                                ORDER BY status DESC";
+                    } else if($description == 'Vice Principal'){
+                        $sql = "SELECT al.id, al.date_from, al.date_to, al.leave_type, al.num_leave, al.reason,
+                                al.hr_approval, al.supervisor_approval, al.principal_approval, al.status, e.firstname, e.lastname, lc.unused_leave 
+                                FROM applied_leave AS al 
+                                LEFT JOIN employees AS e ON e.id = al.employee_id
+                                LEFT JOIN leave_credit AS lc ON e.id = lc.employee_id AND al.leave_type = lc.leave_type
+                                LEFT JOIN employment_records AS er ON er.employee_id = e.id
+                                LEFT JOIN departments AS d ON er.department_id = d.id
+                                LEFT JOIN position AS p ON er.position_id = p.id
+                                WHERE d.departments = 'Student Services' OR p.description = 'Department Head'
+                                ORDER BY status DESC";
+                    } else if($description == 'Department Head'){
+                      echo $department = $user['abbreviation'];
+                      echo $level = $user['acadLevel'];
+                      $sql = "SELECT al.id, al.date_from, al.date_to, al.leave_type, al.num_leave, al.reason,
+                              al.hr_approval, al.supervisor_approval, al.principal_approval, al.status, e.firstname, e.lastname, lc.unused_leave 
+                              FROM applied_leave AS al 
+                              LEFT JOIN employees AS e ON e.id = al.employee_id
+                              LEFT JOIN leave_credit AS lc ON e.id = lc.employee_id AND al.leave_type = lc.leave_type
+                              LEFT JOIN employment_records AS er ON er.employee_id = e.id
+                              LEFT JOIN departments AS d ON er.department_id = d.id
+                              WHERE d.abbreviation = '$department' AND d.level = '$level'
+                              ORDER BY status DESC";
+                    } else {
+                              $department = $user['abbreviation'];
+                              $sql = "SELECT al.id, al.date_from, al.date_to, al.leave_type, al.num_leave, al.reason,
+                                      al.hr_approval, al.supervisor_approval, al.principal_approval, al.status, e.firstname, e.lastname, lc.unused_leave 
+                                      FROM applied_leave AS al 
+                                      LEFT JOIN employees AS e ON e.id = al.employee_id
+                                      LEFT JOIN leave_credit AS lc ON e.id = lc.employee_id AND al.leave_type = lc.leave_type
+                                      LEFT JOIN employment_records AS er ON er.employee_id = e.id
+                                      LEFT JOIN departments AS d ON er.department_id = d.id
+                                      WHERE d.abbreviation = '$department'
+                                      ORDER BY status DESC";
+                          }
+                    
+
+
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       $id = $row['id'];
@@ -181,15 +221,6 @@ function getRow(id){
     dataType: 'json',
     success: function(response){
       $('.id').val(response.id);
-      $('#edit_employee_id').val(response.employee_id);
-      $('#edit_date_from').val(response.date_from);
-      $('#edit_date_to').val(response.date_to);
-      $('#edit_leave_type').val(response.leave_type);
-      $('#edit_reason').val(response.reason);
-      $('#edit_hr_approval').val(response.hr_approval);
-      $('#edit_supervisor_approval').val(response.supervisor_approval);
-      $('#edit_principal_approval').val(response.principal_approval);
-      $('#edit_status').val(response.status);
     }
   });
 }

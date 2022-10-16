@@ -62,7 +62,13 @@
         </li>
         
         <?php 
-          if($user['supervisory_level'] == 2 || $user['supervisory_level'] == 1){
+          $key1 = 'Manager';
+          $key2 = 'Head';
+          $key3 = 'Principal';
+   
+          $ref = $user['description'];
+          
+          if(strpos($ref, $key1) !== false || strpos($ref, $key2) !== false || strpos($ref, $key3) !== false){
               echo '
                 <li class="header">MANAGE LEAVE REQUEST</li>
                 <li><a href="leave_request.php"><i class="fa fa-comments-o"></i> <span>Leave Requests</span></a></li>

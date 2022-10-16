@@ -95,7 +95,11 @@
                             $level = $row['level'];
                             if($level == 0){
                               $level = 'Admin/Staff';
-                            } else if($level == 5){
+                            } else  if($level == 6){
+                              $level = 'Student Services';
+                            } else  if($level == 7){
+                              $level = 'Support Services';
+                            }else if($level == 5){
                               $level = 'Preschool';
                             }
                             echo "
@@ -250,12 +254,16 @@
                            $sql = "SELECT * FROM departments ORDER BY departments";
                            $query = $conn->query($sql);
                            while($row = $query->fetch_assoc()){
-                             $level = $row['level'];
-                             if($level == 0){
-                               $level = 'Admin/Staff';
-                             } else if($level == 5){
-                               $level = 'Preschool';
-                             }
+                            $level = $row['level'];
+                            if($level == 0){
+                              $level = 'Admin/Staff';
+                            } else  if($level == 6){
+                              $level = 'Student Services';
+                            } else  if($level == 7){
+                              $level = 'Support Services';
+                            }else if($level == 5){
+                              $level = 'Preschool';
+                            }
                              echo "
                                <option value='".$row['id']."'>".$row['departments'].' Level : ' .$level."</option>
                              ";

@@ -32,9 +32,7 @@
 		$row = $leave_details->fetch_assoc();
 		$al_status = $row['status'];
 		
-		if($count->num_rows > 0){
-			$_SESSION['error'] = 'Leave application already exist';
-		} else if($date_from > $date_to){
+		if($date_from > $date_to){
 			$_SESSION['error'] = 'Date From exceeds Date To';
 		} else if($al_status == 'Approved'){
 			$_SESSION['error'] = 'Leave Application already Approved. Changes to leave application denied.';
@@ -66,7 +64,7 @@
 					if($status == "Approved"){
 						$leave_available -= $num_leave;
 						$update_leave_credit = "UPDATE leave_credit SET unused_leave = '$leave_available', 
-												used_leave = '$num_leave' WHERE employee_id";
+												used_leave = '$num_leave' WHERE employee_id = '$id'";
 						$conn->query($update_leave_credit);
 					}
 					$_SESSION['success'] = 'Application leave updated successfully';

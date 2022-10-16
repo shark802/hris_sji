@@ -7,8 +7,9 @@ e<?php
 		$time_in = date('H:i:s', strtotime($time_in));
 		$time_out = $_POST['time_out'];
 		$time_out = date('H:i:s', strtotime($time_out));
+		$grace_period = $_POST['grace_period'];
 
-		$sql = "UPDATE schedules SET time_in = '$time_in', time_out = '$time_out' WHERE id = '$id'";
+		$sql = "UPDATE schedules SET time_in = '$time_in', time_out = '$time_out', grace_period = '$grace_period' WHERE id = '$id'";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Schedule updated successfully';
 		}

@@ -82,11 +82,15 @@
                 $query = $conn->query($sql);
                 $total = $query->num_rows;
 
-                $sql = "SELECT * FROM attendance WHERE status = 1";
-                $query = $conn->query($sql);
-                $early = $query->num_rows;
-                
-                $percentage = ($early/$total)*100;
+                if($total > 0){
+                  $sql = "SELECT * FROM attendance WHERE status = 1";
+                  $query = $conn->query($sql);
+                  $early = $query->num_rows;
+                  
+                  $percentage = ($early/$total)*100;
+                } else {
+                  $percentage = 0;
+                }
 
                 echo "<h3>".number_format($percentage, 2)."<sup style='font-size: 20px'>%</sup></h3>";
               ?>

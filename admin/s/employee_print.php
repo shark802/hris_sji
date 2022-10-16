@@ -9,12 +9,7 @@
 		$query = $conn->query($sql);
 		$total = 0;
 		while($row = $query->fetch_assoc()){
-            $pos = $row['position_id'];
-            
-                $sql1 = "SELECT * FROM position where id = '$pos'";
-                $query1= $conn->query($sql1);
-                $row1 = $query1->fetch_assoc();
-            
+           
 			$contents .= "
 			<tr>
                 <td></td>

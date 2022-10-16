@@ -52,7 +52,7 @@
 					$status = "Pending";
 				}
 				$application_reference = "LV-".$date_from.$employee_id;
-				echo $application_reference;
+				//echo $application_reference;
 
 				$sql = "INSERT INTO applied_leave (application_reference, employee_id, date_from, date_to, leave_type, num_leave, reason,
 					hr_approval, supervisor_approval, principal_approval, status) 

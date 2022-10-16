@@ -52,7 +52,7 @@
 												used_leave = '$num_leave' WHERE employee_id";
 						$conn->query($update_leave_credit);
 					}
-					$_SESSION['success'] = 'Application leave added successfully';
+					$_SESSION['success'] = 'Application leave successfully submitted';
 				}
 				else{
 					$_SESSION['error'] = $conn->error;
