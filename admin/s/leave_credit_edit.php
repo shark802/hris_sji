@@ -21,6 +21,6 @@
 		$_SESSION['error'] = 'Fill up edit form first';
 	}
 
-	header('location:http://localhost/payroll/web/admin/leave_credit.php?id='.$employee_id);
+	header('location:http://sjitime.herokuapp.com/admin/leave_credit.php?id='.$employee_id);
 
 ?>

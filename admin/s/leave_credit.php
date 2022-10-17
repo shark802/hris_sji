@@ -45,7 +45,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header with-border"> <a href="http://localhost/hris_sji/admin/s/record.php"  class="btn btn-danger btn-sm btn-flat"><i class="fa fa-arrow-circle-left"></i> Back</a>
+            <div class="box-header with-border"> <a href="http://sjitime.herokuapp.com/admin/s/record.php"  class="btn btn-danger btn-sm btn-flat"><i class="fa fa-arrow-circle-left"></i> Back</a>
             
             </div>
             <div class="box-body">
